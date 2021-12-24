@@ -16,7 +16,7 @@ export const getDoctorsQuery = gql`
 `;
 
 export const getDoctorByIdQuery = gql`
-  query GetDoctorById($doctorsId: String!) {
+  query GetDoctorById($doctorsId: Int!) {
     getDoctorById(doctorsId: $doctorsId) {
       id
       firstName
