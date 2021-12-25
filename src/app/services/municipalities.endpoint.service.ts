@@ -9,9 +9,29 @@ import { deleteMunicipality } from 'src/app/mutations/municipalities.mutations';
 
 @Injectable()
 export class MunicipalitiesEndPointService {
-  getAllMunicipalities(): Observable<any> {}
+  constructor(private apollo: Apollo) {}
 
-  getMunicipalityById(municipalityKey: string): Observable<any> {}
+  getAllMunicipalities(): Observable<any> {
+    return this.apollo.watchQuery({
+      query: getMunicipalitiesQuery,
+    }).valueChanges;
+  }
 
-  deleteMunicipalityById(municipalityKey: string): Observable<any> {}
+  getMunicipalityById(municipalityKey: string): Observable<any> {
+    return this.apollo.watchQuery({
+      query: getMunicipalityByIdQuery,
+      variables: {
+        municipalityKey: municipalityKey,
+      },
+    }).valueChanges;
+  }
+
+  deleteMunicipalityById(municipalityKey: string): Observable<any> {
+    return this.apollo.mutate({
+      mutation: deleteMunicipality,
+      variables: {
+        municipalityKey: municipalityKey,
+      },
+    });
+  }
 }
