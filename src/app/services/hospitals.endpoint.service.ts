@@ -9,9 +9,29 @@ import { deleteHospital } from 'src/app/mutations/hospitals.mutations';
 
 @Injectable()
 export class HospitalsEndPointService {
-  getAllHospitals(): Observable<any> {}
+  constructor(private apollo: Apollo) {}
 
-  getHospitalById(hospitalKey: string): Observable<any> {}
+  getAllHospitals(): Observable<any> {
+    return this.apollo.watchQuery({
+      query: getHospitalsQuery,
+    }).valueChanges;
+  }
 
-  deleteHospitalById(hospitalKey: string): Observable<any> {}
+  getHospitalById(hospitalKey: string): Observable<any> {
+    return this.apollo.watchQuery({
+      query: getHospitalByIdQuery,
+      variables: {
+        hospitalKey: hospitalKey,
+      },
+    }).valueChanges;
+  }
+
+  deleteHospitalById(hospitalKey: string): Observable<any> {
+    return this.apollo.mutate({
+      mutation: deleteHospital,
+      variables: {
+        hospitalKey: hospitalKey,
+      },
+    });
+  }
 }
