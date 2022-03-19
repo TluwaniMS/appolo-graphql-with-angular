@@ -1,5 +1,9 @@
 # ApolloAngularFirstTrial
 
+# About Repository:
+This is a basic angular project that I created to learn the basics of using Apollo with angular.
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
 
 # Dependencies:
