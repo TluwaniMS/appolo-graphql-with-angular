@@ -3,6 +3,9 @@
 # About Repository:
 This is a basic angular project that I created to learn the basics of using Apollo with angular.
 
+# Software(s) required:
+* Latest stable version of Node Package Manager
+* Angular CLI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
 
