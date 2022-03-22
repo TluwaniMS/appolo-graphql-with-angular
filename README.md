@@ -10,7 +10,7 @@ This is a basic angular project that I created to learn the basics of using Apol
 # Project Setup:
 
 ## NB!
-Please clone the following [doctors directory server](https://github.com/TluwaniMS/doctors-directory-server) and make sure that it's running before running this project.
+Please clone the following [doctors directory server](https://github.com/TluwaniMS/basic-graphql-server-using-graphql-types) and make sure that it's running before running this project.
 
 * Step 1:
 
